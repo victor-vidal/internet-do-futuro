@@ -14,7 +14,7 @@ if sys.argv[1] == 'master':
     command = ""
     for host in sys.argv[2:]:
         #command += f"ping -s {PACKAGE_SIZE} -i {PACKAGE_INTERVAL} {host} & "
-        command += "ping -s " + PACKAGE_SIZE + " -i " + PACKAGE_INTERVAL + " " + host + " & "
+        command += "ping -s " + str(PACKAGE_SIZE) + " -i " + str(PACKAGE_INTERVAL) + " " + host + " & "
     
     os.system(command)
     print("Terminou\n")
@@ -26,5 +26,5 @@ else:
     
     print("Slave script\n")
     #os.system(f"ping -s {PACKAGE_SIZE} -i {PACKAGE_INTERVAL} {sys.argv[2]}")
-    os.system("ping -s " + PACKAGE_SIZE + " -i " + PACKAGE_INTERVAL + " " + sys.argv[2])
+    os.system("ping -s " + str(PACKAGE_SIZE) + " -i " + str(PACKAGE_INTERVAL) + " " + sys.argv[2])
     print("\nTerminou\n")
